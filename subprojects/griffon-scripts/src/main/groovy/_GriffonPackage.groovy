@@ -403,7 +403,7 @@ maybePackAndSign = {srcFile, targetFile = srcFile, boolean force = false ->
     def packOptions = [
             '-mlatest', // smaller files, set modification time on the files to latest
             '-Htrue', // smaller files, always use DEFLATE hint
-            '--segment-limit=-1', // unlimited segmenting
+            '--segment-limit=10485760', // 10 MiB segment limit
     ]
 
     debug("Jar $targetFile")
